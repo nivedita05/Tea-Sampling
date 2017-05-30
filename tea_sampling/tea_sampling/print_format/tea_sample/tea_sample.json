@@ -1,0 +1,22 @@
+{
+ "align_labels_left": 0, 
+ "creation": "2017-05-30 15:59:11.689351", 
+ "custom_format": 1, 
+ "disabled": 0, 
+ "doc_type": "Tea Sample", 
+ "docstatus": 0, 
+ "doctype": "Print Format", 
+ "font": "Default", 
+ "html": "<h5><b><u>Offer List</u></b></h5>\n<p>{{doc.name}}</p>\n\n<p><b>Item Description :</b></p>\n<p>{{doc.sample_name}}</p>\n<p>{{doc.item_name}}</p>\n<p>{{doc.item_description}}</p>\n\n<p><b>Company Contacts :</b></p>\n<p>sales@nawalorganics.com</p>\n<p>Ph : 9087654321</p>\n\n<p><b>**No Commercial Value </b><p>\n", 
+ "idx": 0, 
+ "line_breaks": 0, 
+ "modified": "2017-05-30 16:07:56.797762", 
+ "modified_by": "Administrator", 
+ "module": "Tea Sampling", 
+ "name": "Tea Sample", 
+ "owner": "Administrator", 
+ "print_format_builder": 0, 
+ "print_format_type": "Server", 
+ "show_section_headings": 0, 
+ "standard": "Yes"
+}
