@@ -15,4 +15,19 @@ from frappe import utils
 class TeaSample(Document):
 	def autoname(self):
 		#estateabr = frappe.db.get_value("Estate",{"estate_name": self.estatename}, "abbreviation")
-		self.name = make_autoname("SAM"+ "/" +self.customer_name+ "/.####")
+		self.name = make_autoname("SAM" + "/.####")
+
+	def validate(self):
+		self.get_courier_link()
+
+	def get_courier_link(self):
+		if self.courier_name=="DTDC":
+			self.courier_website = "www.dtdc.in"
+		if self.courier_name=="BLUE DART":
+			self.courier_website = "www.bluedart.com"
+		if self.courier_name=="TIRUPATI":
+			self.courier_website = "www.shreetirupaticourier.net"
+		if self.courier_name=="INLAND":
+			self.courier_website = "http://www.courier-services.in/inland-couriers-private-limited-burrabazar-kolkata_contact-number-address"
+		if self.courier_name=="JAYSHREE":
+			self.courier_website = "http://www.trackcourier.net/jayshree-courier-service-tracking/"
