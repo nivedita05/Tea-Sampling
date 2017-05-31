@@ -7,3 +7,17 @@ frappe.ui.form.on('Tea Sample', {
 	}
 });
 
+cur_frm.fields_dict['customer_address'].get_query = function(doc) {
+return{
+filters:[
+['address_title', '=', doc.customer_name]
+
+]
+}}
+cur_frm.fields_dict['shipping_detail'].get_query = function(doc) {
+return{
+filters:[
+['address_title', '=', doc.customer_name]
+
+]
+}}

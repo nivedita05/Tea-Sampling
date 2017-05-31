@@ -19,7 +19,8 @@ class TeaSample(Document):
 
 	def validate(self):
 		self.get_courier_link()
-
+		self.set_address()
+		
 	def get_courier_link(self):
 		if self.courier_name=="DTDC":
 			self.courier_website = "www.dtdc.in"
@@ -31,3 +32,14 @@ class TeaSample(Document):
 			self.courier_website = "http://www.courier-services.in/inland-couriers-private-limited-burrabazar-kolkata_contact-number-address"
 		if self.courier_name=="JAYSHREE":
 			self.courier_website = "http://www.trackcourier.net/jayshree-courier-service-tracking/"
+
+
+	def set_address(self):
+		line1 = frappe.db.sql("""select address_line1 from `tabAddress` where address_title=%s """,(self.customer_name))
+		#line2 = frappe.db.sql("""select address_line2 from `tabAddress` where address_title=%s """,(self.customer_name))
+		city = frappe.db.sql("""select city from `tabAddress` where address_title=%s """,(self.customer_name))
+		country = frappe.db.sql("""select country from `tabAddress` where address_title=%s """,(self.customer_name))
+		state = frappe.db.sql("""select state from `tabAddress` where address_title=%s """,(self.customer_name))
+		
+		self.address = line1[0][0] 
+		self.shipping_address = line1[0][0] 
